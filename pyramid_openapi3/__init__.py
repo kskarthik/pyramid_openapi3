@@ -322,7 +322,9 @@ def add_spec_view_directory(
     config.action((f"{apiname}_spec",), register, order=PHASE0_CONFIG)
 
 
-def _create_api_settings(config: Configurator, filepath, route_name, spec) -> t.Dict:
+def _create_api_settings(
+    config: Configurator, filepath: str, route_name: str, spec: Spec
+) -> t.Dict:
     custom_formatters = config.registry.settings.get("pyramid_openapi3_formatters")
     custom_deserializers = config.registry.settings.get(
         "pyramid_openapi3_deserializers"
